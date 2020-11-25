@@ -105,7 +105,7 @@ sed -i '/^host SOC212-LEAF02/d' /etc/dhcp/dhcpd.hosts
 # The "hardware ethernet" address must match the left_mac= setting in topology.dot for eth0
 # Hand out same address that will be provisioned in automation and set in inventory/falconv2/hosts file
 cat <<EOT > /etc/dhcp/dhcpd-SOC212.hosts
-group2 {
+group {
 
   option domain-name-servers 10.2.0.10;
   option domain-name "simulation";
