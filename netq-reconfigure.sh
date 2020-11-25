@@ -4,12 +4,6 @@
 # reset NetQ server install
 netq bootstrap reset
 
-# quick netq update
-apt update -qy
-apt install -qy netq-apps netq-agent
-netq config restart agent
-netq config restar cli
-
 # Overwrite the netplan interface config
 cat <<EOT > /etc/netplan/01-netcfg.yaml
 network:
@@ -27,6 +21,12 @@ EOT
 
 # appy netplan config changes
 netplan apply
+
+# quick netq update
+apt update -qy
+apt install -qy netq-apps netq-agent
+netq config restart agent
+netq config restar cli
 
 # bootstrap netq k8s - takes about 5 mins
 netq bootstrap master interface eth0 tarball s3://netq-archives/latest/netq-bootstrap-3.2.1.tgz
