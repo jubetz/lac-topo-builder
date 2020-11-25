@@ -80,22 +80,21 @@ graph falconv2 {
   # OOB-MGMT connections
    "oob-mgmt-server":"eth1" -- "oob-mgmt-switch":"swp1"
    "netq-ts":"eth0" -- "oob-mgmt-switch":"swp2"
-   "oob-mgmt-switch":"eth0" -- "oob-mgmt-switch":"swp3" [left_mac="44:38:39:22:01:7e"]
-   "SOC301-SSPN01":"eth0" -- "oob-mgmt-switch":"swp4" [left_mac="44:38:39:22:01:6e"]
-   "SOC301-SSPN02":"eth0" -- "oob-mgmt-switch":"swp5" [left_mac="44:38:39:22:01:90"]
-   "SOC301-SPIN01":"eth0" -- "oob-mgmt-switch":"swp6" [left_mac="44:38:39:22:01:6a"]
-   "SOC301-SPIN02":"eth0" -- "oob-mgmt-switch":"swp7" [left_mac="44:38:39:22:01:88"]
-   "SOC301-SPIN03":"eth0" -- "oob-mgmt-switch":"swp8" [left_mac="44:38:39:22:01:86"]
-   "SOC212-SPIN01":"eth0" -- "oob-mgmt-switch":"swp9" [left_mac="44:38:39:22:01:76"]
-   "SOC212-SPIN02":"eth0" -- "oob-mgmt-switch":"swp10" [left_mac="44:38:39:22:01:72"]
-   "SOC302-LEAF01":"eth0" -- "oob-mgmt-switch":"swp11" [left_mac="44:38:39:22:01:7a"]
-   "SOC302-LEAF02":"eth0" -- "oob-mgmt-switch":"swp12" [left_mac="44:38:39:22:01:78"]
-   "SOC303-LEAF01":"eth0" -- "oob-mgmt-switch":"swp13" [left_mac="44:38:39:22:01:84"]
-   "SOC303-LEAF02":"eth0" -- "oob-mgmt-switch":"swp14" [left_mac="44:38:39:22:01:8a"]
-   "SOC304-LEAF01":"eth0" -- "oob-mgmt-switch":"swp15" [left_mac="44:38:39:22:01:82"]
-   "SOC304-LEAF02":"eth0" -- "oob-mgmt-switch":"swp16" [left_mac="44:38:39:22:01:92"]
-   "SOC212-LEAF01":"eth0" -- "oob-mgmt-switch":"swp17" [left_mac="44:38:39:22:01:70"]
-   "SOC212-LEAF02":"eth0" -- "oob-mgmt-switch":"swp18" [left_mac="44:38:39:22:01:6c"]
+   "SOC301-SSPN01":"eth0" -- "oob-mgmt-switch":"swp3" [left_mac="44:38:39:22:01:6e"]
+   "SOC301-SSPN02":"eth0" -- "oob-mgmt-switch":"swp4" [left_mac="44:38:39:22:01:90"]
+   "SOC301-SPIN01":"eth0" -- "oob-mgmt-switch":"swp5" [left_mac="44:38:39:22:01:6a"]
+   "SOC301-SPIN02":"eth0" -- "oob-mgmt-switch":"swp6" [left_mac="44:38:39:22:01:88"]
+   "SOC301-SPIN03":"eth0" -- "oob-mgmt-switch":"swp7" [left_mac="44:38:39:22:01:86"]
+   "SOC212-SPIN01":"eth0" -- "oob-mgmt-switch":"swp8" [left_mac="44:38:39:22:01:76"]
+   "SOC212-SPIN02":"eth0" -- "oob-mgmt-switch":"swp9" [left_mac="44:38:39:22:01:72"]
+   "SOC302-LEAF01":"eth0" -- "oob-mgmt-switch":"swp10" [left_mac="44:38:39:22:01:7a"]
+   "SOC302-LEAF02":"eth0" -- "oob-mgmt-switch":"swp11" [left_mac="44:38:39:22:01:78"]
+   "SOC303-LEAF01":"eth0" -- "oob-mgmt-switch":"swp12" [left_mac="44:38:39:22:01:84"]
+   "SOC303-LEAF02":"eth0" -- "oob-mgmt-switch":"swp13" [left_mac="44:38:39:22:01:8a"]
+   "SOC304-LEAF01":"eth0" -- "oob-mgmt-switch":"swp14" [left_mac="44:38:39:22:01:82"]
+   "SOC304-LEAF02":"eth0" -- "oob-mgmt-switch":"swp15" [left_mac="44:38:39:22:01:92"]
+   "SOC212-LEAF01":"eth0" -- "oob-mgmt-switch":"swp16" [left_mac="44:38:39:22:01:70"]
+   "SOC212-LEAF02":"eth0" -- "oob-mgmt-switch":"swp17" [left_mac="44:38:39:22:01:6c"]
 
     # DUMMY ports for LEAF switch mlag bonds- creates the network interface in simulation. Not actually connected to anything
     "SOC302-LEAF01":"swp1" -- "dummy":"dummy8-swp1"
