@@ -99,6 +99,7 @@ graph falconv2 {
 
 
     # DUMMY ports for LEAF switch mlag bonds- creates the network interface in simulation. Not actually connected to anything
+    "SOC302-LEAF01":"swp1" -- "dummy":"dummy8-swp1"
     "SOC302-LEAF01":"swp2" -- "dummy":"dummy8-swp2"
     "SOC302-LEAF01":"swp3" -- "dummy":"dummy8-swp3"
     "SOC302-LEAF01":"swp4" -- "dummy":"dummy8-swp4"
@@ -290,6 +291,7 @@ graph falconv2 {
     "SOC303-LEAF02":"swp46" -- "dummy":"dummy11-swp46"
     "SOC303-LEAF02":"swp47" -- "dummy":"dummy11-swp47"
     "SOC303-LEAF02":"swp48" -- "dummy":"dummy11-swp48"
+    "SOC304-LEAF01":"swp1" -- "dummy":"dummy12-swp1"
     "SOC304-LEAF01":"swp2" -- "dummy":"dummy12-swp2"
     "SOC304-LEAF01":"swp3" -- "dummy":"dummy12-swp3"
     "SOC304-LEAF01":"swp4" -- "dummy":"dummy12-swp4"
