@@ -169,3 +169,7 @@ interpreter_python = auto_silent
 [ssh_connection]
 ssh_args = -o ControlMaster=auto -o ControlPersist=60s -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null
 EOT
+
+# point the netq agent at the correct address
+netq config add agent server 10.22.0.200
+netq config restart agent
