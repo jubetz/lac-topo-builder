@@ -7,19 +7,21 @@ function error() {
 }
 trap error ERR
 
+# Pull the list of trusted ssh keys for the cumulus user
+# This sets up key based auth for ansible
 SSH_URL="http://10.2.0.132/authorized_keys"
-#Setup SSH key authentication for Ansible
 mkdir -p /home/cumulus/.ssh
 wget -O /home/cumulus/.ssh/authorized_keys $SSH_URL
 
 # unexpire cumulus user password (new for 4.2)
+# this is needed for Ansible to work. Set password back to 'old' default CumulusLinux!
 passwd -x 99999 cumulus
 echo 'cumulus:CumulusLinux!' | chpasswd
 
-# make user cumulus passowrdless sudo
+# make user cumulus passowrdless sudo for convenience
 echo "cumulus ALL=(ALL) NOPASSWD:ALL" > /etc/sudoers.d/10_cumulus
 
-# configure netq
+# configure netq, but this also gets configured in automation
 cat << EOT > /etc/netq/netq.yml
 netq-agent:
   server: 10.22.0.200
