@@ -13,14 +13,10 @@ iface eth0 inet dhcp
 auto eth1
 iface eth1 inet static
     address 10.22.0.1/24
-  
-  
-auto eth1.1
-iface eth1.1 inet static
     address 10.2.0.10/16
     address 10.2.0.132/16
     address 10.2.0.133/16
-        
+         
 EOT
 
 # fix dhcpd.conf for second subnet
