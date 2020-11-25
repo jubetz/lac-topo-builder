@@ -16,6 +16,7 @@ iface eth1 inet static
     address 10.2.0.10/16
     address 10.2.0.132/16
     address 10.2.0.133/16
+    post-up echo 0 | tee /proc/sys/net/ipv4/conf/*/send_redirects
          
 EOT
 
