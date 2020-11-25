@@ -74,7 +74,7 @@ subnet 10.22.0.0 netmask 255.255.255.0 {
   option ntp-servers 10.2.0.133;
 }
 subnet 10.2.0.0 netmask 255.255.0.0 {
-  range 10.2.17.200 10.2.17.250;
+  range 10.2.17.200 10.2.17.230;
   option domain-name-servers 10.2.0.133;
   option domain-name "simulation";
   default-lease-time 172800;  #2 days
