@@ -131,6 +131,7 @@ apt-get install -qy ntp
 
 # restart networking NTP and DNS/DHCP for changes
 systemctl restart networking
+systemctl restart isc-dhcp-server
 systemctl restart dnsmasq
 systemctl enable ntp
 systemctl start ntp
