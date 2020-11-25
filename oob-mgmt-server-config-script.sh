@@ -63,7 +63,7 @@ class "onie-vendor-classes" {
 # OOB Management subnet
 shared-network LOCAL-NET{
 subnet 10.22.0.0 netmask 255.255.255.0 {
-  range 10.22.0.10 10.22.0.50;
+  range 10.22.0.50 10.22.0.100;
   option domain-name-servers 10.2.0.133;
   option domain-name "simulation";
   default-lease-time 172800;  #2 days
