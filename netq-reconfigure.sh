@@ -1,7 +1,9 @@
 #!/bin/bash
 
+# reset NetQ server install
 netq bootstrap reset
 
+# Overwrite the netplan interface config
 cat <<EOT > /etc/netplan/01-netcfg.yaml
 network:
   version: 2
@@ -16,8 +18,11 @@ network:
         search: [simulation]
 EOT
 
+# appy netplan config changes
 netplan apply
 
-netq bootstrap master interface eth0 tarball s3://netq-archives/latest/netq-bootstrap-3.2.1.tgz > /dev/null 2>&1
+# bootstrap netq k8s - takes about 5 mins
+netq bootstrap master interface eth0 tarball s3://netq-archives/latest/netq-bootstrap-3.2.1.tgz
 
+# install netq with a dummy key
 netq install opta standalone full interface eth0 bundle s3://netq-archives/latest/NetQ-3.2.1-opta.tgz config-key CMScARImZ3cuYWlyZGV2MS5uZXRxZGV2LmN1bXVsdXNuZXR3b3Jrcy5jb20YuwM=
