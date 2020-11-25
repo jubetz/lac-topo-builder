@@ -3,6 +3,12 @@
 # reset NetQ server install
 netq bootstrap reset
 
+# quick netq update
+apt update -qy
+apt install -qy netq-apps netq-agent
+netq config restart agent
+netq config restar cli
+
 # Overwrite the netplan interface config
 cat <<EOT > /etc/netplan/01-netcfg.yaml
 network:
