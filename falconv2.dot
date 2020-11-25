@@ -1,0 +1,97 @@
+graph falconv2 {
+
+ "oob-mgmt-server"  [function="oob-server" os="generic/ubuntu1804" memory="2048"]
+ "oob-mgmt-switch"  [function="oob-switch"]  
+ "netq-ts" [os="netq-ts-cloud-3.2.0"]
+
+ "SOC301-SSPN01" [function="spine" os="CumulusCommunity/cumulus-vx" version="4.2.0"]
+ "SOC301-SSPN02" [function="spine" os="CumulusCommunity/cumulus-vx" version="4.2.0"]
+ "SOC301-SPIN01" [function="spine" os="CumulusCommunity/cumulus-vx" version="4.2.0"]
+ "SOC301-SPIN02" [function="spine" os="CumulusCommunity/cumulus-vx" version="4.2.0"]
+ "SOC301-SPIN03" [function="spine" os="CumulusCommunity/cumulus-vx" version="4.2.0"]
+ "SOC212-SPIN01" [function="spine" os="CumulusCommunity/cumulus-vx" version="4.2.0"]
+ "SOC212-SPIN02" [function="spine" os="CumulusCommunity/cumulus-vx" version="4.2.0"]
+ "SOC302-LEAF01" [function="leaf" os="CumulusCommunity/cumulus-vx" version="4.2.0"]
+ "SOC302-LEAF02" [function="leaf" os="CumulusCommunity/cumulus-vx" version="4.2.0"]
+ "SOC303-LEAF01" [function="leaf" os="CumulusCommunity/cumulus-vx" version="4.2.0"]
+ "SOC303-LEAF02" [function="leaf" os="CumulusCommunity/cumulus-vx" version="4.2.0"]
+ "SOC304-LEAF01" [function="leaf" os="CumulusCommunity/cumulus-vx" version="4.2.0"]
+ "SOC304-LEAF02" [function="leaf" os="CumulusCommunity/cumulus-vx" version="4.2.0"]
+ "SOC212-LEAF01" [function="leaf" os="CumulusCommunity/cumulus-vx" version="4.2.0"]
+ "SOC212-LEAF02" [function="leaf" os="CumulusCommunity/cumulus-vx" version="4.2.0"]
+
+    # 343N super spine - 343N spine connection
+    "SOC301-SSPN01":"swp1" -- "SOC301-SPIN01":"swp30"
+    "SOC301-SSPN01":"swp2" -- "SOC301-SPIN02":"swp30"
+    "SOC301-SSPN01":"swp3" -- "SOC301-SPIN03":"swp30"
+    "SOC301-SSPN02":"swp1" -- "SOC301-SPIN01":"swp29"
+    "SOC301-SSPN02":"swp2" -- "SOC301-SPIN02":"swp29"
+    "SOC301-SSPN02":"swp3" -- "SOC301-SPIN03":"swp29"
+
+    # 343N super spine - 243M spine connection
+    "SOC301-SSPN01":"swp13" -- "SOC212-SPIN02":"swp30"
+    "SOC301-SSPN01":"swp14" -- "SOC212-SPIN01":"swp30"
+    "SOC301-SSPN02":"swp13" -- "SOC212-SPIN02":"swp29"
+    "SOC301-SSPN02":"swp14" -- "SOC212-SPIN01":"swp29"
+
+    # SOC301-SPIN01 - 343N leafs connection
+    "SOC301-SPIN01":"swp3" -- "SOC302-LEAF01":"swp51"
+    "SOC301-SPIN01":"swp4" -- "SOC302-LEAF02":"swp51"
+    "SOC301-SPIN01":"swp5" -- "SOC303-LEAF01":"swp51"
+    "SOC301-SPIN01":"swp6" -- "SOC303-LEAF02":"swp51"
+    "SOC301-SPIN01":"swp7" -- "SOC304-LEAF01":"swp51"
+    "SOC301-SPIN01":"swp8" -- "SOC304-LEAF02":"swp51"
+
+    # SOC30-SPIN02 - 343N leafs connection
+    "SOC301-SPIN02":"swp3" -- "SOC302-LEAF01":"swp52"
+    "SOC301-SPIN02":"swp4" -- "SOC302-LEAF02":"swp52"
+    "SOC301-SPIN02":"swp5" -- "SOC303-LEAF01":"swp52"
+    "SOC301-SPIN02":"swp6" -- "SOC303-LEAF02":"swp52"
+    "SOC301-SPIN02":"swp7" -- "SOC304-LEAF01":"swp52"
+    "SOC301-SPIN02":"swp8" -- "SOC304-LEAF02":"swp52"
+
+    # SOC30-SPIN03 - 343N leafs connection
+    "SOC301-SPIN03":"swp3" -- "SOC302-LEAF01":"swp53"
+    "SOC301-SPIN03":"swp4" -- "SOC302-LEAF02":"swp53"
+    "SOC301-SPIN03":"swp5" -- "SOC303-LEAF01":"swp53"
+    "SOC301-SPIN03":"swp6" -- "SOC303-LEAF02":"swp53"
+    "SOC301-SPIN03":"swp7" -- "SOC304-LEAF01":"swp53"
+    "SOC301-SPIN03":"swp8" -- "SOC304-LEAF02":"swp53"
+
+    # 243M spine - 243M leaf connection
+    "SOC212-SPIN01":"swp3" -- "SOC212-LEAF01":"swp51"
+    "SOC212-SPIN01":"swp4" -- "SOC212-LEAF02":"swp51"
+    "SOC212-SPIN02":"swp3" -- "SOC212-LEAF01":"swp52"
+    "SOC212-SPIN02":"swp4" -- "SOC212-LEAF02":"swp52"
+ 
+   # clag connection
+    "SOC302-LEAF01":"swp49" -- "SOC302-LEAF02":"swp49"
+    "SOC302-LEAF01":"swp50" -- "SOC302-LEAF02":"swp50"
+    "SOC303-LEAF01":"swp49" -- "SOC303-LEAF02":"swp49"
+    "SOC303-LEAF01":"swp50" -- "SOC303-LEAF02":"swp50"
+    "SOC304-LEAF01":"swp49" -- "SOC304-LEAF02":"swp49"
+    "SOC304-LEAF01":"swp50" -- "SOC304-LEAF02":"swp50"
+    "SOC212-LEAF01":"swp49" -- "SOC212-LEAF02":"swp49"
+    "SOC212-LEAF01":"swp50" -- "SOC212-LEAF02":"swp50"
+
+  # OOB-MGMT connections
+   "oob-mgmt-server":"eth1" -- "oob-mgmt-switch":"swp1"
+   "oob-mgmt-switch":"eth0" -- "oob-mgmt-switch":"swp2"
+   "netq-ts":"eth0" -- "oob-mgmt-switch":"swp3"
+   "SOC301-SSPN01":"eth0" -- "oob-mgmt-switch":"swp4"
+   "SOC301-SSPN02":"eth0" -- "oob-mgmt-switch":"swp5"
+   "SOC301-SPIN01":"eth0" -- "oob-mgmt-switch":"swp6"
+   "SOC301-SPIN02":"eth0" -- "oob-mgmt-switch":"swp7"
+   "SOC301-SPIN03":"eth0" -- "oob-mgmt-switch":"swp8"
+   "SOC212-SPIN01":"eth0" -- "oob-mgmt-switch":"swp9"
+   "SOC212-SPIN02":"eth0" -- "oob-mgmt-switch":"swp10"
+   "SOC302-LEAF01":"eth0" -- "oob-mgmt-switch":"swp11"
+   "SOC302-LEAF02":"eth0" -- "oob-mgmt-switch":"swp12"
+   "SOC303-LEAF01":"eth0" -- "oob-mgmt-switch":"swp13"
+   "SOC303-LEAF02":"eth0" -- "oob-mgmt-switch":"swp14"
+   "SOC304-LEAF01":"eth0" -- "oob-mgmt-switch":"swp15"
+   "SOC304-LEAF02":"eth0" -- "oob-mgmt-switch":"swp16"
+   "SOC212-LEAF01":"eth0" -- "oob-mgmt-switch":"swp17"
+   "SOC212-LEAF02":"eth0" -- "oob-mgmt-switch":"swp18"
+
+}
