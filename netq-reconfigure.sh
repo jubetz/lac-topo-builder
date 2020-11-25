@@ -31,7 +31,7 @@ netplan apply
 # bootstrap netq k8s - takes about 5 mins
 netq bootstrap master interface eth0 tarball s3://netq-archives/latest/netq-bootstrap-3.2.1.tgz
 
-# install netq with a dummy key
+# install netq with a dummy key - this takes about 30 minutes :(
 netq install opta standalone full interface eth0 bundle s3://netq-archives/latest/NetQ-3.2.1-opta.tgz config-key CMScARImZ3cuYWlyZGV2MS5uZXRxZGV2LmN1bXVsdXNuZXR3b3Jrcy5jb20YuwM=
 
 # cleanup the install and bootstrap tarballs just to save disk space
