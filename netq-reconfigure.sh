@@ -1,5 +1,5 @@
 #!/bin/bash
-## run this script as root
+## run this script as root: sudo bash ./netq-reconfigure.sh
 
 # reset NetQ server install
 netq bootstrap reset
