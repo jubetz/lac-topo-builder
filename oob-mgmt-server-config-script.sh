@@ -12,7 +12,12 @@ iface eth0 inet dhcp
 
 auto eth1
 iface eth1 inet static
-    address 192.168.200.1/24
+    address 10.22.0.1/24
+    
+auto eth1.1
+iface eth1.1 inet static
+    address 10.2.0.10/16
+        
 EOT
 
 apt-get update -qy
