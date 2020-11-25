@@ -1,0 +1,47 @@
+#!/bin/bash
+# Created by Topology-Converter v4.7.1
+#    Template Revision: v4.7.1
+
+function error() {
+  echo -e "e[0;33mERROR: The Zero Touch Provisioning script failed while running the command $BASH_COMMAND at line $BASH_LINENO.e[0m" >&2
+}
+trap error ERR
+
+SSH_URL="http://10.2.0.132/authorized_keys"
+#Setup SSH key authentication for Ansible
+mkdir -p /home/cumulus/.ssh
+wget -O /home/cumulus/.ssh/authorized_keys $SSH_URL
+
+# unexpire cumulus user password (new for 4.2)
+passwd -x 99999 cumulus
+echo 'cumulus:CumulusLinux!' | chpasswd
+
+# make user cumulus passowrdless sudo
+echo "cumulus ALL=(ALL) NOPASSWD:ALL" > /etc/sudoers.d/10_cumulus
+
+# configure netq
+cat << EOT > /etc/netq/netq.yml
+netq-agent:
+  server: 10.22.0.200
+  vrf: mgmt
+EOT
+
+# allow ntp to make large steps at service restart
+echo "tinker panic 0" >> /etc/ntp.conf
+systemctl enable ntp@mgmt
+
+# Pre-login banner
+cat <<EOT > /etc/issue
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+   Welcome to
+
+   Login with: cumulus/CumulusLinux!
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+EOT
+cp /etc/issue /etc/issue.net
+chmod 755 /etc/issue /etc/issue.net
+
+reboot
+exit 0
+#CUMULUS-AUTOPROVISIONING
