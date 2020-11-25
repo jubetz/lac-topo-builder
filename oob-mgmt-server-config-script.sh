@@ -121,6 +121,18 @@ host SOC212-LEAF02 {hardware ethernet 44:38:39:22:01:6c; fixed-address 10.2.17.2
 
 EOT
 
+# Fix /etc/hosts for DNS to map to the other DHCP pool leases (hangover from topology_converter)
+sed -i 's/^10.22.0.* SOC212-SPIN01$/10.2.17.232 SOC212-SPIN01/' /etc/hosts
+sed -i 's/^10.22.0.* SOC212-SPIN02$/10.2.17.233 SOC212-SPIN02/' /etc/hosts
+sed -i 's/^10.22.0.* SOC212-LEAF01$/10.2.17.234 SOC212-LEAF01/' /etc/hosts
+sed -i 's/^10.22.0.* SOC212-LEAF02$/10.2.17.235 SOC212-LEAF02/' /etc/hosts
+
+#Also fix ansible hosts, this inventory file doesn't really get used though
+sed -i 's/^SOC212-SPIN01 ansible_host=.*/SOC212-SPIN01 ansible_host=10.2.17.232/' /etc/ansible/hosts
+sed -i 's/^SOC212-SPIN02 ansible_host=.*/SOC212-SPIN02 ansible_host=10.2.17.233/' /etc/ansible/hosts
+sed -i 's/^SOC212-LEAF01 ansible_host=.*/SOC212-LEAF01 ansible_host=10.2.17.234/' /etc/ansible/hosts
+sed -i 's/^SOC212-LEAF02 ansible_host=.*/SOC212-LEAF02 ansible_host=10.2.17.235/' /etc/ansible/hosts
+
 # install NTP
 apt-get update -qy
 apt-get install -qy ntp
@@ -133,9 +145,7 @@ systemctl enable ntp
 systemctl start ntp
 systemctl restart apache2
 
-
-##
-
+## Default ansible.cfg to match what's in the project just for convenience.
 cat <<EOT > /etc/ansible/ansible.cfg
 [defaults]
 roles_path = ./roles
