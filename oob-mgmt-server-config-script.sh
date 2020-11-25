@@ -67,14 +67,14 @@ class "onie-vendor-classes" {
 shared-network LOCAL-NET{
 subnet 10.22.0.0 netmask 255.255.255.0 {
   range 10.22.0.10 10.22.0.50;
-  option domain-name-servers 10.22.0.1;
+  option domain-name-servers 10.2.0.133;
   option domain-name "simulation";
   default-lease-time 172800;  #2 days
   max-lease-time 345600;      #4 days
   option www-server 10.22.0.1;
   option default-url = "http://10.22.0.1/onie-installer";
   option cumulus-provision-url "http://10.22.0.1/cumulus-ztp";
-  option ntp-servers 10.22.0.1;
+  option ntp-servers 10.2.0.133;
 }
 subnet 10.2.0.0 netmask 255.255.0.0 {
   range 10.2.17.200 10.2.17.250;
@@ -86,17 +86,44 @@ subnet 10.2.0.0 netmask 255.255.0.0 {
   option default-url = "http://10.2.0.133/onie-installer";
   option cumulus-provision-url "http://10.2.0.133/cumulus-ztp";
   option ntp-servers 10.2.0.133;
-  option router 10.2.0.10;
 }
 }
 
 #include "/etc/dhcp/dhcpd.pools";
 include "/etc/dhcp/dhcpd.hosts";
+include "/etc/dhcp/dhcpd-SOC212.hosts";
 EOT
 
-## remove SOC212 nodes from dhcpd.hosts pool
+## remove SOC212 nodes from dhcpd.hosts pool that is created automatically
+sed -i '/^host SOC212-SPIN01/d' /etc/dhcp/dhcpd.hosts
+sed -i '/^host SOC212-SPIN02/d' /etc/dhcp/dhcpd.hosts
+sed -i '/^host SOC212-LEAF01/d' /etc/dhcp/dhcpd.hosts
+sed -i '/^host SOC212-LEAF02/d' /etc/dhcp/dhcpd.hosts
+#
 
-## add SOC212 nodes group into dhcpd.hosts pool
+# add a second DHCP group to match ansible inventory
+# The "hardware ethernet" address must match the left_mac= setting in topology.dot for eth0
+# Hand out same address that will be provisioned in automation and set in inventory/falconv2/hosts file
+cat <<EOT > /etc/dhcp/dhcpd-SOC212.hosts
+group2 {
+
+  option domain-name-servers 10.2.0.10;
+  option domain-name "simulation";
+  option routers 10.2.0.10;
+  option www-server 10.2.0.10;
+  option default-url = "http://10.2.0.10/onie-installer";
+
+host SOC212-SPIN01 {hardware ethernet 44:38:39:22:01:76; fixed-address 10.2.17.232; option host-name "SOC212-SPIN01"; option cumulus-provision-url "http://10.2.0.10/cumulus-ztp";  }
+
+host SOC212-SPIN02 {hardware ethernet 44:38:39:22:01:72; fixed-address 10.2.17.233; option host-name "SOC212-SPIN02"; option cumulus-provision-url "http://10.2.0.10/cumulus-ztp";  }
+
+host SOC212-LEAF01 {hardware ethernet 44:38:39:22:01:70; fixed-address 10.2.17.234; option host-name "SOC212-LEAF01"; option cumulus-provision-url "http://10.2.0.10/cumulus-ztp";  }
+
+host SOC212-LEAF02 {hardware ethernet 44:38:39:22:01:6c; fixed-address 10.2.17.235; option host-name "SOC212-LEAF02"; option cumulus-provision-url "http://10.2.0.10/cumulus-ztp";  }
+
+}#End of static host group
+
+EOT
 
 # install NTP
 apt-get update -qy
@@ -107,3 +134,4 @@ systemctl restart networking
 systemctl restart dnsmasq
 systemctl enable ntp
 systemctl start ntp
+systemctl restart apache2
