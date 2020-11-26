@@ -1,5 +1,7 @@
 #!/bin/bash
 
+sudo su
+
 cat <<EOT > /etc/network/interfaces
 auto lo
 iface lo inet loopback
