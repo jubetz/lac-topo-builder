@@ -2,7 +2,7 @@ graph falconv2 {
 
  "dummy" [function="fake"]
 
- "oob-mgmt-server"  [function="oob-server" memory="2048" mgmt_ip="10.22.0.1"]
+ "oob-mgmt-server"  [function="oob-server" memory="2048" cpu="2" mgmt_ip="10.22.0.1"]
  "oob-mgmt-switch"  [function="oob-switch"]  
  "netq-ts" [os="netq-ts-cloud-3.2.0" mgmt_ip="10.22.0.200"]
 
