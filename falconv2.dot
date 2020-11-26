@@ -145,8 +145,7 @@ graph falconv2 {
     "SOC302-LEAF01":"swp46" -- "dummy":"dummy8-swp46"
     "SOC302-LEAF01":"swp47" -- "dummy":"dummy8-swp47"
     "SOC302-LEAF01":"swp48" -- "dummy":"dummy8-swp48"
-    "SOC302-LEAF01":"swp49" -- "dummy":"dummy8-swp49"
-    "SOC302-LEAF01":"swp50" -- "dummy":"dummy8-swp50"
+        # clag bonds #
     "SOC302-LEAF01":"swp51" -- "dummy":"dummy8-swp51"
     "SOC302-LEAF01":"swp52" -- "dummy":"dummy8-swp52"
     "SOC302-LEAF01":"swp53" -- "dummy":"dummy8-swp53"
@@ -202,8 +201,7 @@ graph falconv2 {
     "SOC302-LEAF02":"swp46" -- "dummy":"dummy9-swp46"
     "SOC302-LEAF02":"swp47" -- "dummy":"dummy9-swp47"
     "SOC302-LEAF02":"swp48" -- "dummy":"dummy9-swp48"
-    "SOC302-LEAF02":"swp49" -- "dummy":"dummy9-swp49"
-    "SOC302-LEAF02":"swp50" -- "dummy":"dummy9-swp50"
+        # clag bonds #
     "SOC302-LEAF02":"swp51" -- "dummy":"dummy9-swp51"
     "SOC302-LEAF02":"swp52" -- "dummy":"dummy9-swp52"
     "SOC302-LEAF02":"swp53" -- "dummy":"dummy9-swp53"
@@ -259,8 +257,7 @@ graph falconv2 {
     "SOC303-LEAF01":"swp46" -- "dummy":"dummy10-swp46"
     "SOC303-LEAF01":"swp47" -- "dummy":"dummy10-swp47"
     "SOC303-LEAF01":"swp48" -- "dummy":"dummy10-swp48"
-    "SOC303-LEAF01":"swp49" -- "dummy":"dummy10-swp49"
-    "SOC303-LEAF01":"swp50" -- "dummy":"dummy10-swp50"
+        # clag bonds #
     "SOC303-LEAF01":"swp51" -- "dummy":"dummy10-swp51"
     "SOC303-LEAF01":"swp52" -- "dummy":"dummy10-swp52"
     "SOC303-LEAF01":"swp53" -- "dummy":"dummy10-swp53"
@@ -316,8 +313,7 @@ graph falconv2 {
     "SOC303-LEAF02":"swp46" -- "dummy":"dummy11-swp46"
     "SOC303-LEAF02":"swp47" -- "dummy":"dummy11-swp47"
     "SOC303-LEAF02":"swp48" -- "dummy":"dummy11-swp48"
-    "SOC303-LEAF02":"swp49" -- "dummy":"dummy11-swp49"
-    "SOC303-LEAF02":"swp50" -- "dummy":"dummy11-swp50"
+        # clag bonds #
     "SOC303-LEAF02":"swp51" -- "dummy":"dummy11-swp51"
     "SOC303-LEAF02":"swp52" -- "dummy":"dummy11-swp52"
     "SOC303-LEAF02":"swp53" -- "dummy":"dummy11-swp53"
@@ -373,8 +369,7 @@ graph falconv2 {
     "SOC304-LEAF01":"swp46" -- "dummy":"dummy12-swp46"
     "SOC304-LEAF01":"swp47" -- "dummy":"dummy12-swp47"
     "SOC304-LEAF01":"swp48" -- "dummy":"dummy12-swp48"
-    "SOC304-LEAF01":"swp49" -- "dummy":"dummy12-swp49"
-    "SOC304-LEAF01":"swp50" -- "dummy":"dummy12-swp50"
+        # clag bonds #
     "SOC304-LEAF01":"swp51" -- "dummy":"dummy12-swp51"
     "SOC304-LEAF01":"swp52" -- "dummy":"dummy12-swp52"
     "SOC304-LEAF01":"swp53" -- "dummy":"dummy12-swp53"
@@ -430,8 +425,7 @@ graph falconv2 {
     "SOC304-LEAF02":"swp46" -- "dummy":"dummy13-swp46"
     "SOC304-LEAF02":"swp47" -- "dummy":"dummy13-swp47"
     "SOC304-LEAF02":"swp48" -- "dummy":"dummy13-swp48"
-    "SOC304-LEAF02":"swp49" -- "dummy":"dummy13-swp49"
-    "SOC304-LEAF02":"swp50" -- "dummy":"dummy13-swp50"
+        # clag bonds #
     "SOC304-LEAF02":"swp51" -- "dummy":"dummy13-swp51"
     "SOC304-LEAF02":"swp52" -- "dummy":"dummy13-swp52"
     "SOC304-LEAF02":"swp53" -- "dummy":"dummy13-swp53"
@@ -487,8 +481,7 @@ graph falconv2 {
     "SOC212-LEAF01":"swp46" -- "dummy":"dummy14-swp46"
     "SOC212-LEAF01":"swp47" -- "dummy":"dummy14-swp47"
     "SOC212-LEAF01":"swp48" -- "dummy":"dummy14-swp48"
-    "SOC212-LEAF01":"swp49" -- "dummy":"dummy14-swp49"
-    "SOC212-LEAF01":"swp50" -- "dummy":"dummy14-swp50"
+        # clag bonds #
     "SOC212-LEAF01":"swp51" -- "dummy":"dummy14-swp51"
     "SOC212-LEAF01":"swp52" -- "dummy":"dummy14-swp52"
     "SOC212-LEAF01":"swp53" -- "dummy":"dummy14-swp53"
@@ -545,8 +538,7 @@ graph falconv2 {
     "SOC212-LEAF02":"swp47" -- "dummy":"dummy15-swp47"
     "SOC212-LEAF02":"swp48" -- "dummy":"dummy15-swp48"
     "SOC212-LEAF02":"swp48" -- "dummy":"dummy15-swp48"
-    "SOC212-LEAF02":"swp49" -- "dummy":"dummy15-swp49"
-    "SOC212-LEAF02":"swp50" -- "dummy":"dummy15-swp50"
+        # clag bonds #
     "SOC212-LEAF02":"swp51" -- "dummy":"dummy15-swp51"
     "SOC212-LEAF02":"swp52" -- "dummy":"dummy15-swp52"
     "SOC212-LEAF02":"swp53" -- "dummy":"dummy15-swp53"
