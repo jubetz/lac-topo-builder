@@ -524,7 +524,6 @@ graph falconv2 {
     "SOC212-LEAF02":"swp46" -- "dummy":"dummy15-swp46"
     "SOC212-LEAF02":"swp47" -- "dummy":"dummy15-swp47"
     "SOC212-LEAF02":"swp48" -- "dummy":"dummy15-swp48"
-    "SOC212-LEAF02":"swp48" -- "dummy":"dummy15-swp48"
         # clag bonds swp49 & 50 #
         # spine links swp51 & 52 #
     "SOC212-LEAF02":"swp53" -- "dummy":"dummy15-swp53"
