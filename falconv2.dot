@@ -145,10 +145,8 @@ graph falconv2 {
     "SOC302-LEAF01":"swp46" -- "dummy":"dummy8-swp46"
     "SOC302-LEAF01":"swp47" -- "dummy":"dummy8-swp47"
     "SOC302-LEAF01":"swp48" -- "dummy":"dummy8-swp48"
-        # clag bonds #
-    "SOC302-LEAF01":"swp51" -- "dummy":"dummy8-swp51"
-    "SOC302-LEAF01":"swp52" -- "dummy":"dummy8-swp52"
-    "SOC302-LEAF01":"swp53" -- "dummy":"dummy8-swp53"
+        # clag bonds swp49 & 50 #
+        # spine links swp51, 52, 53 #
     "SOC302-LEAF01":"swp54" -- "dummy":"dummy8-swp54"
     "SOC302-LEAF01":"swp55" -- "dummy":"dummy8-swp55"
     "SOC302-LEAF01":"swp56" -- "dummy":"dummy8-swp56"
@@ -201,10 +199,8 @@ graph falconv2 {
     "SOC302-LEAF02":"swp46" -- "dummy":"dummy9-swp46"
     "SOC302-LEAF02":"swp47" -- "dummy":"dummy9-swp47"
     "SOC302-LEAF02":"swp48" -- "dummy":"dummy9-swp48"
-        # clag bonds #
-    "SOC302-LEAF02":"swp51" -- "dummy":"dummy9-swp51"
-    "SOC302-LEAF02":"swp52" -- "dummy":"dummy9-swp52"
-    "SOC302-LEAF02":"swp53" -- "dummy":"dummy9-swp53"
+        # clag bonds swp49 & 50 #
+        # spine links swp51, 52, 53 #
     "SOC302-LEAF02":"swp54" -- "dummy":"dummy9-swp54"
     "SOC302-LEAF02":"swp55" -- "dummy":"dummy9-swp55"
     "SOC302-LEAF02":"swp56" -- "dummy":"dummy9-swp56"
@@ -257,10 +253,8 @@ graph falconv2 {
     "SOC303-LEAF01":"swp46" -- "dummy":"dummy10-swp46"
     "SOC303-LEAF01":"swp47" -- "dummy":"dummy10-swp47"
     "SOC303-LEAF01":"swp48" -- "dummy":"dummy10-swp48"
-        # clag bonds #
-    "SOC303-LEAF01":"swp51" -- "dummy":"dummy10-swp51"
-    "SOC303-LEAF01":"swp52" -- "dummy":"dummy10-swp52"
-    "SOC303-LEAF01":"swp53" -- "dummy":"dummy10-swp53"
+        # clag bonds swp49 & 50 #
+        # spine links swp51, 52, 53 #
     "SOC303-LEAF01":"swp54" -- "dummy":"dummy10-swp54"
     "SOC303-LEAF01":"swp55" -- "dummy":"dummy10-swp55"
     "SOC303-LEAF01":"swp56" -- "dummy":"dummy10-swp56"
@@ -313,10 +307,8 @@ graph falconv2 {
     "SOC303-LEAF02":"swp46" -- "dummy":"dummy11-swp46"
     "SOC303-LEAF02":"swp47" -- "dummy":"dummy11-swp47"
     "SOC303-LEAF02":"swp48" -- "dummy":"dummy11-swp48"
-        # clag bonds #
-    "SOC303-LEAF02":"swp51" -- "dummy":"dummy11-swp51"
-    "SOC303-LEAF02":"swp52" -- "dummy":"dummy11-swp52"
-    "SOC303-LEAF02":"swp53" -- "dummy":"dummy11-swp53"
+        # clag bonds swp49 & 50 #
+        # spine links swp51, 52, 53 #
     "SOC303-LEAF02":"swp54" -- "dummy":"dummy11-swp54"
     "SOC303-LEAF02":"swp55" -- "dummy":"dummy11-swp55"
     "SOC303-LEAF02":"swp56" -- "dummy":"dummy11-swp56"
@@ -369,10 +361,8 @@ graph falconv2 {
     "SOC304-LEAF01":"swp46" -- "dummy":"dummy12-swp46"
     "SOC304-LEAF01":"swp47" -- "dummy":"dummy12-swp47"
     "SOC304-LEAF01":"swp48" -- "dummy":"dummy12-swp48"
-        # clag bonds #
-    "SOC304-LEAF01":"swp51" -- "dummy":"dummy12-swp51"
-    "SOC304-LEAF01":"swp52" -- "dummy":"dummy12-swp52"
-    "SOC304-LEAF01":"swp53" -- "dummy":"dummy12-swp53"
+        # clag bonds swp49 & 50 #
+        # spine links swp51, 52, 53 #
     "SOC304-LEAF01":"swp54" -- "dummy":"dummy12-swp54"
     "SOC304-LEAF01":"swp55" -- "dummy":"dummy12-swp55"
     "SOC304-LEAF01":"swp56" -- "dummy":"dummy12-swp56"
@@ -425,10 +415,8 @@ graph falconv2 {
     "SOC304-LEAF02":"swp46" -- "dummy":"dummy13-swp46"
     "SOC304-LEAF02":"swp47" -- "dummy":"dummy13-swp47"
     "SOC304-LEAF02":"swp48" -- "dummy":"dummy13-swp48"
-        # clag bonds #
-    "SOC304-LEAF02":"swp51" -- "dummy":"dummy13-swp51"
-    "SOC304-LEAF02":"swp52" -- "dummy":"dummy13-swp52"
-    "SOC304-LEAF02":"swp53" -- "dummy":"dummy13-swp53"
+        # clag bonds swp49 & 50 #
+        # spine links swp51, 52, 53 #
     "SOC304-LEAF02":"swp54" -- "dummy":"dummy13-swp54"
     "SOC304-LEAF02":"swp55" -- "dummy":"dummy13-swp55"
     "SOC304-LEAF02":"swp56" -- "dummy":"dummy13-swp56"
@@ -481,9 +469,8 @@ graph falconv2 {
     "SOC212-LEAF01":"swp46" -- "dummy":"dummy14-swp46"
     "SOC212-LEAF01":"swp47" -- "dummy":"dummy14-swp47"
     "SOC212-LEAF01":"swp48" -- "dummy":"dummy14-swp48"
-        # clag bonds #
-    "SOC212-LEAF01":"swp51" -- "dummy":"dummy14-swp51"
-    "SOC212-LEAF01":"swp52" -- "dummy":"dummy14-swp52"
+        # clag bonds swp49 & 50 #
+        # spine links swp51 & 52 #
     "SOC212-LEAF01":"swp53" -- "dummy":"dummy14-swp53"
     "SOC212-LEAF01":"swp54" -- "dummy":"dummy14-swp54"
     "SOC212-LEAF01":"swp55" -- "dummy":"dummy14-swp55"
@@ -538,9 +525,8 @@ graph falconv2 {
     "SOC212-LEAF02":"swp47" -- "dummy":"dummy15-swp47"
     "SOC212-LEAF02":"swp48" -- "dummy":"dummy15-swp48"
     "SOC212-LEAF02":"swp48" -- "dummy":"dummy15-swp48"
-        # clag bonds #
-    "SOC212-LEAF02":"swp51" -- "dummy":"dummy15-swp51"
-    "SOC212-LEAF02":"swp52" -- "dummy":"dummy15-swp52"
+        # clag bonds swp49 & 50 #
+        # spine links swp51 & 52 #
     "SOC212-LEAF02":"swp53" -- "dummy":"dummy15-swp53"
     "SOC212-LEAF02":"swp54" -- "dummy":"dummy15-swp54"
     "SOC212-LEAF02":"swp55" -- "dummy":"dummy15-swp55"
